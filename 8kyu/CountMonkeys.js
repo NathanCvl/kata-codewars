@@ -1,4 +1,3 @@
-//count monkeys
 function monkeyCount(n) {
     const monkeys = [];
     for (let i = 1; i <= n; i++) {
