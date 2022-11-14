@@ -29,37 +29,30 @@ function getPlanetName(id){
 
   return name;
 }
-/find the stray number
 function stray(numbers) {
 	  let arr = numbers.sort((a, b) => a - b);
   return arr[0] === arr[1] ? arr[arr.length - 1] : arr[0];
 }
-/breaking chocolate problem
 function breakChocolate(n, m) {
 	  return n * m === 0 ? 0 : n * m - 1;
 }
-/[] --> [] , ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
 function number(array) {
 	  return array.map((n, i) => `${i + 1}: ${n}`);
 }
-/sort numbers
+
 function solution(nums){
 	  return nums === null ? [] : nums.sort((a, b) => a - b);
 }
-// basic variable assignment
 var a = "code";
 var b = "wa.rs";
 var name = a + b;
 
-//count odd numbers below n
 function oddCount(n){
 	  return Math.floor(n / 2);
 }
-//make a function that does arithmetic!
 function arithmetic(a, b, operator){
 	  return operator === 'add' ? a + b : operator === 'subtract' ? a - b : operator === 'multiply' ? a * b : a / b;
 }
-//money, money, money
 function calculateYears(principal, interest, tax, desired) {
 	  let years = 0;
 	  while (principal < desired) {
@@ -69,7 +62,6 @@ function calculateYears(principal, interest, tax, desired) {
 	  return years;
 }
 
-//Count The Digit - 7kyu
 function nbDig(n, d) {
 	  let arr = [];
 	  for (let i = 0; i <= n; i++) {
@@ -78,11 +70,9 @@ function nbDig(n, d) {
 	  return arr.join('').split('').filter(n => n == d).length;
 }
 
-//Short long short - 7kyu
 function solution(a, b){
 	  return a.length < b.length ? a + b + a : b + a + b;
 }
-//dont give me five - 7kyu
 function dontGiveMeFive(start, end){
 	  let arr = [];
 	  for (let i = start; i <= end; i++) {
@@ -90,20 +80,16 @@ function dontGiveMeFive(start, end){
 	  }
 	  return arr.filter(n => !n.toString().includes('5')).length;
 }
-//factorial - 7kyu throw error
 function factorial(n){
 	  if (n < 0 || n > 12) throw new RangeError();
 	  return n === 0 ? 1 : n * factorial(n - 1);
 }
-//my head is at the wrong end - 7kyu
 function fixTheMeerkat(arr) {
 	  return arr.reverse();
 }
-//anagram detection - 7kyu
 const isAnagram = function (test, original) {
 	return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('');
 };
-//sum of sequence - 7kyu
 const sequenceSum = (begin, end, step) => {
 	let sum = 0;
 	for (let i = begin; i <= end; i += step) {
@@ -111,7 +97,6 @@ const sequenceSum = (begin, end, step) => {
 	}
 	return sum;
 }
-//unfinished loop - bug fixing - 7kyu
 function createArray(number){
 	var newArray = [];
 
@@ -121,27 +106,21 @@ function createArray(number){
 
 	return newArray;
 }
-//fiind numbers which are divisible by given number - 7kyu
 function divisibleBy(numbers, divisor){
 	  return numbers.filter(n => n % divisor === 0);
 }
-//remove anchor from URL - 7kyu
 function removeUrlAnchor(url){
 	  return url.split('#')[0];
 }
-//if else syntax debug Grasshopper - 7kyu
 function checkAlive (health) {
 	  return health > 0;
 }
-// Capitalization and Mutability - 7kyu
 function capitalizeWord(word) {
 	  return word[0].toUpperCase() + word.slice(1);
 }
-//sort array by string length - 7kyu
 function sortByLength (array) {
 	  return array.sort((a, b) => a.length - b.length);
 }
-//Stringy Strings - 7kyu
 function stringy(size) {
 	  let str = '';
 	  for (let i = 0; i < size; i++) {
@@ -149,18 +128,134 @@ function stringy(size) {
 	  }
 	  return str;
 }
-//Summing a number's digits - 7kyu
 function sumDigits(number) {
 	  let  a =  Math.abs(number).toString().split('').reduce((a, b) => +a + +b);
 	  return parseInt(a)
 }
-//Find the capitals - 7kyu
 const capitals = function (word) {
 	  let arr = [];
 	  for (let i = 0; i < word.length; i++) {
 		if (word[i] === word[i].toUpperCase()) {
 		  arr.push(i);
 		}
+	  }
+	  return arr;
+}
+function twoOldestAges(ages){
+	return ages.sort((a, b) => a - b).slice(-2);
+}
+function solution(digits){
+	  let arr = [];
+	  for (let i = 0; i < digits.length; i++) {
+		arr.push(digits.slice(i, i + 5));
+	  }
+	  return Math.max(...arr);
+}
+                            
+const flip=(d, a)=>{
+	  return d === 'R' ? a.sort((a, b) => a - b) : a.sort((a, b) => b - a);
+}
+                              
+function smallEnough(a, limit){
+	  return a.every(n => n <= limit);
+}
+                                    
+function maxMultiple(divisor, bound){
+	  return bound - bound % divisor;
+
+}
+                                                  
+function nthEven(n){
+	  return n * 2 - 2;
+}
+                                  
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+	  return enteredCode === correctCode && Date.parse(currentDate) <= Date.parse(expirationDate);
+}
+                                                    
+function mxdiflg(a1, a2) {
+	  if (a1.length === 0 || a2.length === 0) return -1;
+	  let arr = [];
+	  for (let i = 0; i < a1.length; i++) {
+		for (let j = 0; j < a2.length; j++) {
+		  arr.push(Math.abs(a1[i].length - a2[j].length));
+		}
+	  }
+	  return Math.max(...arr);
+}
+                                    
+function noOdds( values ){
+	  return values.filter(n => n % 2 === 0);
+}
+                                                                                
+function squareOrSquareRoot(array) {
+	  return array.map(n => Math.sqrt(n) % 1 === 0 ? Math.sqrt(n) : Math.pow(n, 2));
+}
+                                                      
+function inAscOrder(arr) {
+	  return arr.join('') === arr.sort((a, b) => a - b).join('');
+}
+                                                                    
+function mergeArrays(arr1, arr2) {
+	  return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
+}
+                                          
+function triangular( n ) {
+	  return n < 0 ? 0 : n * (n + 1) / 2;
+}
+
+                                                
+var replaceDots = function(str) {
+	  return str.replace(/\./g, '-');
+}
+                                                                
+function getChar(c){
+	  return String.fromCharCode(c);
+}
+                                                  
+function mouthSize(animal) {
+	  return animal.toLowerCase() === 'alligator' ? 'small' : 'wide';
+}
+var gimme = function (inputArray) {
+	  return inputArray.indexOf(inputArray.slice().sort((a, b) => a - b)[1]);
+
+}
+
+                                
+function pyramid(n) {
+	  let arr = [];
+	  for (let i = 1; i <= n; i++) {
+		arr.push(Array(i).fill(1));
+	  }
+	  return arr;
+}
+
+                                                  
+function spinWords(string){
+	  return string.split(' ').map(n => n.length >= 5 ? n.split('').reverse().join('') : n).join(' ');
+}
+                                                            
+function toCamelCase(str){
+	  return str.replace(/[-_][a-z]/gi, n => n.slice(1).toUpperCase());
+}
+                                          
+function longestConsec(strarr, k) {
+	  if (k <= 0 || k > strarr.length) return '';
+	  let arr = [];
+	  for (let i = 0; i < strarr.length; i++) {
+		arr.push(strarr.slice(i, i + k).join(''));
+	  }
+	  return arr.sort((a, b) => b.length - a.length)[0];
+}
+                                                  
+function parse( data ){
+	  let arr = [];
+	  let sum = 0;
+	  for (let i = 0; i < data.length; i++) {
+		if (data[i] === 'i') sum++;
+		if (data[i] === 'd') sum--;
+		if (data[i] === 's') sum = Math.pow(sum, 2);
+		if (data[i] === 'o') arr.push(sum);
 	  }
 	  return arr;
 }
